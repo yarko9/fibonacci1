@@ -11,7 +11,7 @@ function cycle(n) {
     let prev = 1;
     let prePrev = 1;
     let next;
-    for (let i=1; i<n; i++) {
+    for (let i=2; i<n; i++) {
         next = prev + prePrev;
         prePrev = prev;
         prev = next;
@@ -20,7 +20,7 @@ function cycle(n) {
 }
 
 function recursive(n) {
-  if (n <= 1) 
+  if (n <= 2) 
   return 1;
   return recursive(n - 1) + recursive(n - 2);
 }
@@ -31,5 +31,5 @@ function array(n) {
     for(let i=2; i<=n; i++) {
         farray[i] = farray[i - 1] + farray[i - 2];
     }
-    return farray[n];
+    return farray[n-1];
 }
